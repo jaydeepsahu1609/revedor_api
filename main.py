@@ -308,6 +308,13 @@ class API:
     # initialise the fastAPI object
     app = FastAPI()
 
+
+    @staticmethod
+    @app.get('/blog_stats')
+    def hello_world():
+        return {}
+
+    
     # ######## [ PDA-197 ] Word-Count and Heading Scrapper #############
 
     @staticmethod
@@ -461,6 +468,6 @@ class API:
 #                               EXECUTE
 # #################################################################################
 if __name__ == '__main__':
-    uvicorn.run("main:API.app", workers=3, reload=True)
+    uvicorn.run("main:API.app", workers=3)
 
 # #################################### END #########################################
